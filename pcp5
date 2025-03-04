@@ -1,0 +1,11 @@
+int* replaceElements(int* arr, int arrSize, int* returnSize) {
+    int max = arr[arrSize-1];
+    arr[arrSize-1] = -1;
+    for(int i=arrSize-2; i>=0; i--){
+        int currMax = arr[i];
+        arr[i] = max;
+        if(currMax > max) max = currMax;
+    }
+    *returnSize = arrSize;
+    return arr;
+}
